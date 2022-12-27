@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "e204b974-3671-49a8-821d-6e19cf96be2d",
+		"name": "myapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5731795"
+	},
+	"item": [
+		{
+			"name": "create product",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"book\",\r\n    \"pdt_name\": \"Book1\",\r\n    \"price\": 500.0,\r\n    \"qty\": 5000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productList\": [\r\n        {\r\n            \"category\": \"toy\",\r\n            \"pdt_name\": \"action_figure\",\r\n            \"price\": 100.0,\r\n            \"qty\": 5000\r\n        },\r\n        {\r\n            \"category\": \"toy\",\r\n            \"pdt_name\": \"car\",\r\n            \"price\": 250.0,\r\n            \"qty\": 500\r\n        },\r\n        {\r\n            \"category\": \"toy\",\r\n            \"pdt_name\": \"train\",\r\n            \"price\": 300.0,\r\n            \"qty\": 200\r\n        }\r\n\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/addMany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"addMany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update product",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pid\" : 153,\r\n    \"category\": \"book\",\r\n    \"pdtName\": \"David Copperfield\",\r\n    \"price\": 500.0,\r\n    \"qty\": 5000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get product by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/get?id=152",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "152"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/getProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"getProducts"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "toy",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
